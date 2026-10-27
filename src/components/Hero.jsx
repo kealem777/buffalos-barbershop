@@ -19,32 +19,41 @@ export function Hero({ t, onOpenBooking }) {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Top Badges */}
+        {/* Top Badges with Rotating Barber Icon */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-900/80 border border-gold-500/30 text-xs sm:text-sm text-gold-300 mb-6 backdrop-blur-md"
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-dark-900/90 border border-gold-500/40 text-xs sm:text-sm text-gold-300 mb-6 backdrop-blur-md shadow-[0_0_20px_rgba(197,160,89,0.2)]"
         >
-          <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+          {/* Rotating barber icon */}
+          <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-gold-500 to-amber-300 text-dark-950 flex items-center justify-center font-bold text-xs animate-[spin_4s_linear_infinite]">
+            ✂
+          </div>
           <span className="font-semibold tracking-wider uppercase">{t.hero.tagline}</span>
           <span className="text-gray-400">•</span>
           <span className="text-gray-300 hidden sm:inline">{t.hero.since}</span>
         </motion.div>
 
-        {/* Central Brand Crest Emblem */}
+        {/* Central Brand Crest Emblem with perfectly centered logo & glowing gold frame */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mx-auto mb-6 w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1 bg-gradient-to-tr from-gold-500 via-amber-300 to-gold-600 shadow-[0_0_35px_rgba(197,160,89,0.3)] hover:scale-105 transition-transform"
+          className="relative mx-auto mb-6 w-36 h-36 sm:w-44 sm:h-44 group"
         >
-          <div className="w-full h-full rounded-full overflow-hidden bg-dark-900 border-2 border-dark-950">
-            <img
-              src="/images/logo-buffalos.jpg"
-              alt="Buffalo's Barbershop"
-              className="w-full h-full object-cover"
-            />
+          {/* Subtle rotating gold accent ring */}
+          <div className="absolute -inset-1.5 rounded-full border border-dashed border-gold-400/60 animate-[spin_14s_linear_infinite] pointer-events-none" />
+
+          {/* Golden Yellow Border Frame */}
+          <div className="w-full h-full rounded-full p-1.5 bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 shadow-[0_0_45px_rgba(197,160,89,0.4)] group-hover:scale-105 transition-transform duration-300">
+            <div className="w-full h-full rounded-full overflow-hidden bg-black border-2 border-dark-950 flex items-center justify-center">
+              <img
+                src="/images/logo-buffalos.jpg"
+                alt="Buffalo's Barbershop"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
           </div>
         </motion.div>
 

@@ -111,11 +111,11 @@ export function LocationSection({ lang, t }) {
             </a>
           </div>
 
-          {/* Interactive Google Map Embed */}
-          <div className="lg:col-span-7 h-96 lg:h-auto min-h-[380px] rounded-2xl overflow-hidden border border-dark-750 shadow-2xl relative">
+          {/* Interactive Google Map with Buffalo's Barbershop Marker */}
+          <div className="lg:col-span-7 h-96 lg:h-auto min-h-[420px] rounded-2xl overflow-hidden border border-dark-750 shadow-2xl relative">
             <iframe
-              title="Google Map - Centro Comercial Las Americas Maracay"
-              src={BARBERSHOP_DATA.googleMapsEmbed}
+              title="Google Map - Buffalo's Barbershop CC Las Americas Maracay"
+              src="https://maps.google.com/maps?q=Centro+Comercial+Las+Americas+Av+Las+Delicias+Maracay+Aragua+Venezuela&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(110%)' }}
@@ -124,10 +124,35 @@ export function LocationSection({ lang, t }) {
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full"
             />
-            {/* Overlay badge on map */}
-            <div className="absolute top-4 left-4 bg-dark-950/90 backdrop-blur-md border border-gold-500/40 p-3 rounded-xl shadow-lg pointer-events-none">
-              <p className="font-cinzel text-xs font-bold text-gold-400">BUFFALO'S BARBERSHOP</p>
-              <p className="text-[10px] text-gray-300">CC Las Américas, Maracay</p>
+
+            {/* Custom Interactive Buffalo's Barbershop Pin Badge directly on map */}
+            <div className="absolute top-5 left-5 right-5 sm:right-auto sm:max-w-md bg-dark-950/95 backdrop-blur-md border border-gold-500/60 p-4 rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.85)] flex items-center gap-3.5 z-20">
+              <div className="relative shrink-0 flex items-center justify-center">
+                <span className="absolute w-8 h-8 rounded-full bg-gold-500/40 animate-ping" />
+                <div className="w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-gold-400 to-amber-300 shadow-md">
+                  <img
+                    src="/images/logo-buffalos.jpg"
+                    alt="Buffalo's"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2">
+                  <h4 className="font-cinzel text-sm sm:text-base font-extrabold text-white tracking-wide truncate">
+                    BUFFALO'S BARBERSHOP
+                  </h4>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-gold-500/20 text-gold-300 border border-gold-500/30 font-bold uppercase">
+                    Aquí
+                  </span>
+                </div>
+                <p className="text-xs text-gold-400 font-semibold truncate">
+                  Centro Comercial Las Américas • Nivel Feria / Comercial
+                </p>
+                <p className="text-[11px] text-gray-400 truncate">
+                  Av. Las Delicias, Maracay, Edo. Aragua
+                </p>
+              </div>
             </div>
           </div>
         </div>

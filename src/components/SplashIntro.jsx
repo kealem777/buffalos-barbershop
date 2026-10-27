@@ -38,14 +38,19 @@ export function SplashIntro({ onFinish, brandName = "BUFFALO'S", since = "2018" 
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative flex flex-col items-center"
           >
-            {/* Outer pulsating gold circle */}
-            <div className="relative w-44 h-44 sm:w-56 sm:h-56 rounded-full p-1 bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-200 shadow-[0_0_50px_rgba(197,160,89,0.35)]">
-              <div className="w-full h-full rounded-full bg-dark-900 flex items-center justify-center overflow-hidden border border-gold-500/30">
-                <img
-                  src="/images/logo-buffalos.jpg"
-                  alt="Buffalo's Barbershop Logo"
-                  className="w-full h-full object-cover filter contrast-110 brightness-105"
-                />
+            {/* Outer rotating dashed accent ring */}
+            <div className="relative w-48 h-48 sm:w-60 sm:h-60 flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border-2 border-dashed border-gold-400/50 animate-[spin_10s_linear_infinite]" />
+
+              {/* Yellow/Gold frame */}
+              <div className="w-[90%] h-[90%] rounded-full p-1.5 bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 shadow-[0_0_55px_rgba(197,160,89,0.45)]">
+                <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden border-2 border-dark-950">
+                  <img
+                    src="/images/logo-buffalos.jpg"
+                    alt="Buffalo's Barbershop Logo"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
 

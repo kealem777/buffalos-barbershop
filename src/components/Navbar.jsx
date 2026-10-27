@@ -33,14 +33,22 @@ export function Navbar({ lang, setLang, t, onOpenBooking }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo brand */}
+          {/* Logo brand with rotating barber badge */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full p-[1.5px] bg-gradient-to-br from-gold-400 to-gold-700 shadow-md">
-              <img
-                src="/images/logo-buffalos.jpg"
-                alt="Buffalo's Barbershop"
-                className="w-full h-full object-cover rounded-full"
-              />
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12">
+              {/* Rotating outer barber ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-dashed border-gold-400/80 animate-[spin_8s_linear_infinite]" />
+              <div className="w-full h-full rounded-full p-[2px] bg-gradient-to-tr from-gold-400 via-amber-300 to-gold-600 shadow-lg">
+                <img
+                  src="/images/logo-buffalos.jpg"
+                  alt="Buffalo's Barbershop"
+                  className="w-full h-full object-cover object-center rounded-full bg-black"
+                />
+              </div>
+              {/* Little barber rotating badge indicator */}
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-gold-500 text-dark-950 flex items-center justify-center text-[9px] font-bold shadow animate-[spin_4s_linear_infinite]">
+                ✂
+              </div>
             </div>
             <div className="flex flex-col">
               <span className="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-white group-hover:text-gold-400 transition-colors">

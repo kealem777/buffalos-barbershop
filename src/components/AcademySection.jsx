@@ -31,18 +31,18 @@ export function AcademySection({ lang, t }) {
         {/* Feature Hero: Certificates Graduation Photo Card */}
         <div className="mb-16 rounded-3xl bg-dark-850 border border-gold-500/30 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
-            {/* The Certificate Graduation Image */}
-            <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-full min-h-[360px] overflow-hidden group">
+            {/* The Cleaned & Enhanced Certificate Graduation Image */}
+            <div className="lg:col-span-7 relative h-80 sm:h-96 lg:h-full min-h-[420px] overflow-hidden group bg-black">
               <img
                 src={BARBERSHOP_DATA.academy.image}
                 alt="Curso de Barbería Buffalo's Barbershop - Certificados y Graduación"
-                className="w-full h-full object-cover barber-photo filter contrast-110 brightness-100"
+                className="w-full h-full object-cover object-center barber-photo filter contrast-110 brightness-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-dark-850 opacity-90" />
               
               {/* Image floating badge */}
-              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-dark-950/85 backdrop-blur-md border border-gold-500/40 px-4 py-2 rounded-xl flex items-center gap-2 text-xs sm:text-sm text-gold-300 font-bold">
-                <Award className="w-4 h-4 text-gold-400" />
+              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-dark-950/90 backdrop-blur-md border border-gold-500/40 px-4 py-2.5 rounded-xl flex items-center gap-2.5 text-xs sm:text-sm text-gold-300 font-bold shadow-xl">
+                <Award className="w-5 h-5 text-gold-400 shrink-0" />
                 <span>Certificación Oficial Buffalo's Barbershop</span>
               </div>
             </div>
