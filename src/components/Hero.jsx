@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Scissors, MapPin, Calendar, ShieldCheck, ArrowRight, Star } from 'lucide-react';
 import { BARBERSHOP_DATA } from '../data/barbershopData';
+import { BarberScissorsIcon, BarberRazorIcon } from './BarberEmblemIcons';
 
 export function Hero({ t, onOpenBooking }) {
   return (
@@ -35,27 +36,60 @@ export function Hero({ t, onOpenBooking }) {
           <span className="text-gray-300 hidden sm:inline">{t.hero.since}</span>
         </motion.div>
 
-        {/* Central Brand Crest Emblem with perfectly centered logo & glowing gold frame */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative mx-auto mb-6 w-36 h-36 sm:w-44 sm:h-44 group"
-        >
-          {/* Subtle rotating gold accent ring */}
-          <div className="absolute -inset-1.5 rounded-full border border-dashed border-gold-400/60 animate-[spin_14s_linear_infinite] pointer-events-none" />
-
-          {/* Golden Yellow Border Frame */}
-          <div className="w-full h-full rounded-full p-1.5 bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 shadow-[0_0_45px_rgba(197,160,89,0.4)] group-hover:scale-105 transition-transform duration-300">
-            <div className="w-full h-full rounded-full overflow-hidden bg-black border-2 border-dark-950 flex items-center justify-center">
-              <img
-                src="/images/logo-buffalos.jpg"
-                alt="Buffalo's Barbershop"
-                className="w-full h-full object-cover object-center"
-              />
+        {/* Heraldic Central Trio: Scissors (Left) - Large Buffalo Crest (Center) - Straight Razor (Right) */}
+        <div className="flex items-center justify-center gap-4 sm:gap-8 mb-8">
+          {/* Left: Stylized Barber Scissors */}
+          <motion.div
+            initial={{ opacity: 0, x: -30, rotate: -15 }}
+            animate={{ opacity: 1, x: 0, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col items-center group cursor-default"
+          >
+            <div className="p-3 sm:p-4 rounded-2xl bg-dark-900/85 border border-gold-500/35 backdrop-blur-md shadow-[0_0_25px_rgba(197,160,89,0.25)] group-hover:scale-110 group-hover:border-gold-400 group-hover:shadow-[0_0_35px_rgba(197,160,89,0.45)] transition-all duration-300">
+              <BarberScissorsIcon className="w-10 h-10 sm:w-14 sm:h-14 transform -scale-x-100 group-hover:-rotate-12 transition-transform duration-300" />
             </div>
-          </div>
-        </motion.div>
+            <span className="text-[10px] uppercase tracking-widest text-gold-400 font-bold mt-2 hidden sm:block">
+              Tijeras Pro
+            </span>
+          </motion.div>
+
+          {/* Center: Large Perfectly Centered Buffalo's Logo in Glowing Gold Ring */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="relative w-36 h-36 sm:w-44 sm:h-44 group shrink-0"
+          >
+            {/* Subtle rotating gold dashed accent ring */}
+            <div className="absolute -inset-2 rounded-full border border-dashed border-gold-400/60 animate-[spin_16s_linear_infinite] pointer-events-none" />
+
+            {/* Golden Yellow Border Frame */}
+            <div className="w-full h-full rounded-full p-1.5 bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 shadow-[0_0_45px_rgba(197,160,89,0.5)] group-hover:scale-105 transition-transform duration-300">
+              <div className="w-full h-full rounded-full overflow-hidden bg-black border-2 border-dark-950 flex items-center justify-center">
+                <img
+                  src="/images/logo-buffalos.png"
+                  alt="Buffalo's Barbershop"
+                  className="w-full h-full object-cover object-center filter contrast-125 brightness-110"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Stylized Straight Razor Blade */}
+          <motion.div
+            initial={{ opacity: 0, x: 30, rotate: 15 }}
+            animate={{ opacity: 1, x: 0, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col items-center group cursor-default"
+          >
+            <div className="p-3 sm:p-4 rounded-2xl bg-dark-900/85 border border-gold-500/35 backdrop-blur-md shadow-[0_0_25px_rgba(197,160,89,0.25)] group-hover:scale-110 group-hover:border-gold-400 group-hover:shadow-[0_0_35px_rgba(197,160,89,0.45)] transition-all duration-300">
+              <BarberRazorIcon className="w-10 h-10 sm:w-14 sm:h-14 group-hover:rotate-12 transition-transform duration-300" />
+            </div>
+            <span className="text-[10px] uppercase tracking-widest text-gold-400 font-bold mt-2 hidden sm:block">
+              Navaja Libre
+            </span>
+          </motion.div>
+        </div>
 
         {/* Hero Headings */}
         <motion.h1
@@ -103,7 +137,7 @@ export function Hero({ t, onOpenBooking }) {
           </a>
         </motion.div>
 
-        {/* Bottom Trust Factors */}
+        {/* Bottom Trust Factors (Prices strictly in USD) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -129,8 +163,8 @@ export function Hero({ t, onOpenBooking }) {
           <div className="flex items-center gap-3 p-3 rounded-lg bg-dark-900/40 border border-dark-800/50">
             <ShieldCheck className="w-5 h-5 text-gold-400 shrink-0" />
             <div className="text-xs">
-              <p className="font-semibold text-gray-200">Pagos Cómodos</p>
-              <p className="text-gray-400">USD, Zelle y Tasa BCV</p>
+              <p className="font-semibold text-gray-200">Precios en USD</p>
+              <p className="text-gray-400">Efectivo USD y Zelle</p>
             </div>
           </div>
         </motion.div>
@@ -138,3 +172,4 @@ export function Hero({ t, onOpenBooking }) {
     </section>
   );
 }
+

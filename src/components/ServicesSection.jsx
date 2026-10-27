@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, Scissors, Sparkles, Check, ChevronRight } from 'lucide-react';
-import { BARBERSHOP_DATA, BCV_RATE } from '../data/barbershopData';
+import { BARBERSHOP_DATA } from '../data/barbershopData';
 
 export function ServicesSection({ lang, t, onSelectService }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -34,9 +34,6 @@ export function ServicesSection({ lang, t, onSelectService }) {
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
             {t.services.subtitle}
           </p>
-          <div className="mt-3 inline-block bg-dark-800/80 border border-dark-700 px-3 py-1 rounded text-xs text-gold-300">
-            💵 Tasa referencial oficial BCV: ~{BCV_RATE.toFixed(2)} Bs / USD
-          </div>
         </div>
 
         {/* Category Tabs */}
@@ -60,8 +57,6 @@ export function ServicesSection({ lang, t, onSelectService }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <AnimatePresence mode="popLayout">
             {filteredServices.map((service) => {
-              const priceBs = (service.priceUSD * BCV_RATE).toFixed(0);
-
               return (
                 <motion.div
                   key={service.id}
@@ -87,13 +82,10 @@ export function ServicesSection({ lang, t, onSelectService }) {
                       </h3>
                     </div>
 
-                    {/* Price Block */}
+                    {/* Price Block - USD Only */}
                     <div className="flex items-baseline gap-2 mb-3">
                       <span className="font-cinzel text-2xl font-extrabold text-gold-400">
-                        ${service.priceUSD}
-                      </span>
-                      <span className="text-xs text-gray-400">
-                        ({priceBs} Bs.)
+                        ${service.priceUSD} USD
                       </span>
                     </div>
 

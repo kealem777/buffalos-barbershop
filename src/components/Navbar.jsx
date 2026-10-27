@@ -33,20 +33,23 @@ export function Navbar({ lang, setLang, t, onOpenBooking }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo brand with rotating barber badge */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12">
-              {/* Rotating outer barber ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-dashed border-gold-400/80 animate-[spin_8s_linear_infinite]" />
-              <div className="w-full h-full rounded-full p-[2px] bg-gradient-to-tr from-gold-400 via-amber-300 to-gold-600 shadow-lg">
-                <img
-                  src="/images/logo-buffalos.jpg"
-                  alt="Buffalo's Barbershop"
-                  className="w-full h-full object-cover object-center rounded-full bg-black"
-                />
+          {/* Logo brand with rotating sharp logo & rotating scissors badge */}
+          <a href="#" className="flex items-center gap-3.5 group">
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0">
+              {/* Outer Golden Border Ring with glow */}
+              <div className="w-full h-full rounded-full p-[2px] bg-gradient-to-tr from-gold-500 via-amber-300 to-gold-600 shadow-[0_0_12px_rgba(197,160,89,0.5)]">
+                {/* Rotating sharp logo inside the circle */}
+                <div className="w-full h-full rounded-full bg-black overflow-hidden flex items-center justify-center border border-dark-900">
+                  <img
+                    src="/images/logo-buffalos.png"
+                    alt="Buffalo's Barbershop"
+                    className="w-full h-full object-cover object-center animate-[spin_14s_linear_infinite] filter contrast-125 brightness-110"
+                    style={{ imageRendering: '-webkit-optimize-contrast' }}
+                  />
+                </div>
               </div>
-              {/* Little barber rotating badge indicator */}
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-gold-500 text-dark-950 flex items-center justify-center text-[9px] font-bold shadow animate-[spin_4s_linear_infinite]">
+              {/* Little moving scissors badge (preserved as user requested) */}
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-gradient-to-tr from-gold-400 to-amber-500 text-dark-950 flex items-center justify-center text-[9px] font-bold shadow-[0_0_8px_rgba(197,160,89,0.8)] border border-dark-950 animate-[spin_4s_linear_infinite]">
                 ✂
               </div>
             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ShoppingBag, Sparkles, Check, DollarSign } from 'lucide-react';
-import { BARBERSHOP_DATA, BCV_RATE } from '../data/barbershopData';
+import { BARBERSHOP_DATA } from '../data/barbershopData';
 
 export function ProductsSection({ lang, t }) {
   const [reservedList, setReservedList] = useState({});
@@ -34,7 +34,6 @@ export function ProductsSection({ lang, t }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {BARBERSHOP_DATA.products.map((item, idx) => {
             const isReserved = !!reservedList[item.id];
-            const priceBs = (item.priceUSD * BCV_RATE).toFixed(0);
 
             return (
               <motion.div
@@ -76,10 +75,7 @@ export function ProductsSection({ lang, t }) {
                 <div className="pt-4 border-t border-dark-800 flex items-center justify-between">
                   <div>
                     <span className="font-cinzel text-xl font-bold text-gold-400">
-                      ${item.priceUSD}
-                    </span>
-                    <span className="text-[11px] text-gray-400 block -mt-1">
-                      ~{priceBs} Bs.
+                      ${item.priceUSD} USD
                     </span>
                   </div>
 

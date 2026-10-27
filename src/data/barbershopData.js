@@ -1,5 +1,3 @@
-export const BCV_RATE = 46.5; // Tasa referencial Bs. por USD
-
 export const BARBERSHOP_DATA = {
   brand: "Buffalo's Barbershop",
   since: "2018",

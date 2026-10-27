@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, Scissors, User, Calendar, Clock, MessageCircle, ChevronRight, ChevronLeft, Star } from 'lucide-react';
-import { BARBERSHOP_DATA, BCV_RATE } from '../data/barbershopData';
+import { BARBERSHOP_DATA } from '../data/barbershopData';
 
 export function BookingModal({ isOpen, onClose, preselectedService, preselectedMaster, lang, t }) {
   const [step, setStep] = useState(1);
@@ -73,12 +73,11 @@ export function BookingModal({ isOpen, onClose, preselectedService, preselectedM
     : (lang === 'es' ? 'Cualquier barbero disponible' : 'Any available barber');
 
   const handleFinishBooking = () => {
-    const priceBs = selectedService ? (selectedService.priceUSD * BCV_RATE).toFixed(0) : 0;
     const msg = `💈 *NUEVA RESERVA ONLINE - BUFFALO'S BARBERSHOP* 💈\n\n` +
       `📍 *Sede:* Centro Comercial Las Américas, Maracay\n` +
       `👤 *Cliente:* ${clientName || 'Cliente'}\n` +
       `📞 *Teléfono:* ${clientPhone || 'No especificado'}\n` +
-      `✂️ *Servicio:* ${currentServiceName} ($${selectedService?.priceUSD} / ~${priceBs} Bs.)\n` +
+      `✂️ *Servicio:* ${currentServiceName} ($${selectedService?.priceUSD} USD)\n` +
       `💈 *Barbero:* ${currentMasterName}\n` +
       `📅 *Fecha:* ${selectedDate}\n` +
       `⏰ *Hora:* ${selectedTime || 'Por coordinar'}\n` +
@@ -170,7 +169,6 @@ export function BookingModal({ isOpen, onClose, preselectedService, preselectedM
               <div className="grid grid-cols-1 gap-2.5 max-h-96 overflow-y-auto pr-1">
                 {BARBERSHOP_DATA.services.map((srv) => {
                   const isSelected = selectedService?.id === srv.id;
-                  const priceBs = (srv.priceUSD * BCV_RATE).toFixed(0);
 
                   return (
                     <div
@@ -200,10 +198,7 @@ export function BookingModal({ isOpen, onClose, preselectedService, preselectedM
 
                       <div className="text-right">
                         <span className="font-cinzel text-base font-extrabold text-gold-400 block">
-                          ${srv.priceUSD}
-                        </span>
-                        <span className="text-[10px] text-gray-400">
-                          ~{priceBs} Bs.
+                          ${srv.priceUSD} USD
                         </span>
                       </div>
                     </div>
@@ -360,7 +355,7 @@ export function BookingModal({ isOpen, onClose, preselectedService, preselectedM
                 <div className="flex justify-between pt-2 border-t border-dark-800">
                   <span className="text-gray-400">{t.bookingModal.priceText}</span>
                   <span className="font-cinzel text-base font-extrabold text-gold-400">
-                    ${selectedService?.priceUSD} (~{(selectedService?.priceUSD * BCV_RATE).toFixed(0)} Bs.)
+                    ${selectedService?.priceUSD} USD
                   </span>
                 </div>
               </div>

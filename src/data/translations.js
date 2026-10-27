@@ -16,7 +16,7 @@ export const translations = {
       ctaBook: "Reservar Cita Online",
       ctaServices: "Ver Servicios y Precios",
       since: "Desde 2018 forjando estilo",
-      bcvNotice: "Aceptamos USD en efectivo / Zelle / Pago Móvil a Tasa Oficial BCV"
+      bcvNotice: "Aceptamos efectivo USD, Zelle y Pago Móvil"
     },
     services: {
       title: "Servicios y Precios",
@@ -116,7 +116,7 @@ export const translations = {
       ctaBook: "Book Appointment Online",
       ctaServices: "Explore Services & Prices",
       since: "Crafting gentleman style since 2018",
-      bcvNotice: "We accept USD Cash / Zelle / Pago Móvil at official BCV rate"
+      bcvNotice: "We accept USD Cash, Zelle and Pago Móvil"
     },
     services: {
       title: "Services & Prices",

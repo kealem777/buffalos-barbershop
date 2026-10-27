@@ -126,7 +126,7 @@ export function Footer({ lang, t }) {
               Domingo: 10:00 AM - 5:00 PM
             </p>
             <div className="p-3 rounded-lg bg-dark-900 border border-dark-800 text-[11px] text-gray-400 leading-tight">
-              💵 Aceptamos: Dólares en efectivo, Zelle, Pago Móvil y Tarjetas a tasa BCV.
+              💵 Aceptamos: Dólares en efectivo ($ USD), Zelle y Pago Móvil.
             </div>
           </div>
         </div>
