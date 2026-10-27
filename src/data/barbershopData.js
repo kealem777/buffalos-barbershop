@@ -14,11 +14,11 @@ export const BARBERSHOP_DATA = {
   phoneRaw: "+584124328901",
   whatsapp: "+58 412-4328901",
   whatsappRaw: "584124328901",
-  instagram: "buffalosbarbershop",
-  instagramUrl: "https://instagram.com",
+  instagram: "buffalosbarbersmcy",
+  instagramUrl: "https://www.instagram.com/buffalosbarbersmcy/",
   workingHours: {
-    weekdays: "Lunes a Sábado: 9:00 AM - 8:00 PM",
-    sunday: "Domingo: 10:00 AM - 5:00 PM"
+    weekdays: "Lunes a Sábado: 10:00 AM - 7:00 PM",
+    sunday: "Domingo: 12:00 M - 6:00 PM"
   },
   
   services: [
