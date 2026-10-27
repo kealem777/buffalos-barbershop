@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-950: #0a0a0c;
+  --color-dark-900: #111215;
+  --color-dark-850: #16181d;
+  --color-dark-800: #1b1e24;
+  --color-dark-750: #22262f;
+  --color-dark-700: #2a2f3a;
+  
+  --color-gold-300: #f0d999;
+  --color-gold-400: #e3c273;
+  --color-gold-500: #c5a059;
+  --color-gold-600: #ad8742;
+  --color-gold-700: #8e6c30;
+
+  --font-cinzel: 'Cinzel', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-dark-950);
+  color: #f3f4f6;
+  font-family: var(--font-montserrat);
+  overflow-x: hidden;
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1013;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2e39;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fff 15%, #e3c273 60%, #c5a059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced luxury photo styling */
+.barber-photo {
+  filter: contrast(1.08) brightness(0.97) saturate(1.05);
+  transition: all 0.4s ease;
+}
+
+.barber-photo:hover {
+  filter: contrast(1.15) brightness(1.02) saturate(1.1);
+}
+
+.bg-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.015),
+    rgba(255, 255, 255, 0.015) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
