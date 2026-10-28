@@ -1,6 +1,7 @@
 import React from 'react';
 import { Scissors, Phone, MessageCircle, Instagram, MapPin, ArrowUp } from 'lucide-react';
 import { BARBERSHOP_DATA } from '../data/barbershopData';
+import { logoImg } from '../assets/images';
 
 export function Footer({ lang, t }) {
   const scrollToTop = () => {
@@ -16,7 +17,7 @@ export function Footer({ lang, t }) {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-gold-500 to-amber-300">
                 <img
-                  src="/images/logo-buffalos.jpg"
+                  src={logoImg}
                   alt="Buffalo's Barbershop"
                   className="w-full h-full object-cover rounded-full"
                 />

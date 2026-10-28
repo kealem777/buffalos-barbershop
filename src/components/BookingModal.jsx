@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, Scissors, User, Calendar, Clock, MessageCircle, ChevronRight, ChevronLeft, Star } from 'lucide-react';
 import { BARBERSHOP_DATA } from '../data/barbershopData';
+import { logoImg } from '../assets/images';
 
 export function BookingModal({ isOpen, onClose, preselectedService, preselectedMaster, lang, t }) {
   const [step, setStep] = useState(1);
@@ -102,7 +103,7 @@ export function BookingModal({ isOpen, onClose, preselectedService, preselectedM
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-gold-500 to-amber-300">
               <img
-                src="/images/logo-buffalos.jpg"
+                src={logoImg}
                 alt="Buffalo's"
                 className="w-full h-full object-cover rounded-full"
               />

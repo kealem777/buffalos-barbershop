@@ -1,3 +1,5 @@
+import { masterBarberCutImg, salonActionImg, academyImg, salonInteriorImg } from '../assets/images';
+
 export const BARBERSHOP_DATA = {
   brand: "Buffalo's Barbershop",
   since: "2018",
@@ -215,10 +217,10 @@ export const BARBERSHOP_DATA = {
       },
       experience: "7+ años",
       specialty: {
-        es: "Cortes modernos con textura, líneas freestyle y tijera avanzada",
+        es: "Cortes modernos con textura, líneas freestyle и tijera avanzada",
         en: "Textured crops, sharp freestyle lines and scissor mastery"
       },
-      photo: "/images/master-barber-cut.jpg"
+      photo: masterBarberCutImg
     },
     {
       id: "reixon",
@@ -232,7 +234,7 @@ export const BARBERSHOP_DATA = {
         es: "Low, Mid y High Fades milimétricos, afeitado a navaja libre",
         en: "Precision skin fades, taper fades and razor craftsmanship"
       },
-      photo: "/images/salon-action.jpg"
+      photo: salonActionImg
     },
     {
       id: "juan-b",
@@ -246,7 +248,7 @@ export const BARBERSHOP_DATA = {
         es: "Corte clásico ejecutivo, diseño de barba y mentor de la academia",
         en: "Executive classic cuts, beard architecture and academy instructor"
       },
-      photo: "/images/academy-graduates.jpg"
+      photo: academyImg
     },
     {
       id: "iverson",
@@ -260,7 +262,7 @@ export const BARBERSHOP_DATA = {
         es: "Perfilado milimétrico de barba, toallas calientes y tratamiento spa",
         en: "Beard sculpting, razor line-ups and thermal towel rituals"
       },
-      photo: "/images/salon-interior-main.jpg"
+      photo: salonInteriorImg
     }
   ],
 
@@ -364,7 +366,7 @@ export const BARBERSHOP_DATA = {
       es: "Forjamos a la nueva generación de barberos de élite en Venezuela con certificación profesional avalada.",
       en: "Training the next generation of master barbers in Venezuela with certified credentials."
     },
-    image: "/images/academy-graduates.jpg",
+    image: academyImg,
     stats: [
       { label: { es: "Barberos Graduados", en: "Certified Graduates" }, value: "150+" },
       { label: { es: "Cursos Dictados", en: "Masterclasses Held" }, value: "35+" },

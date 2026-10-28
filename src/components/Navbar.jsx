@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, MessageCircle, Instagram, Menu, X, Globe, Scissors } from 'lucide-react';
 import { BARBERSHOP_DATA } from '../data/barbershopData';
+import { logoImg } from '../assets/images';
 
 export function Navbar({ lang, setLang, t, onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +42,7 @@ export function Navbar({ lang, setLang, t, onOpenBooking }) {
                 {/* Rotating sharp logo inside the circle */}
                 <div className="w-full h-full rounded-full bg-black overflow-hidden flex items-center justify-center border border-dark-900">
                   <img
-                    src="/images/logo-buffalos.png"
+                    src={logoImg}
                     alt="Buffalo's Barbershop"
                     className="w-full h-full object-cover object-center animate-[spin_14s_linear_infinite] filter contrast-125 brightness-110"
                     style={{ imageRendering: '-webkit-optimize-contrast' }}

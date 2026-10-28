@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Scissors, MapPin, Calendar, ShieldCheck, ArrowRight, Star } from 'lucide-react';
 import { BARBERSHOP_DATA } from '../data/barbershopData';
 import { BarberScissorsIcon, BarberRazorIcon } from './BarberEmblemIcons';
+import { logoImg, salonActionImg } from '../assets/images';
 
 export function Hero({ t, onOpenBooking }) {
   return (
@@ -11,7 +12,7 @@ export function Hero({ t, onOpenBooking }) {
       <div className="absolute inset-0 z-0">
         <div
           className="w-full h-full bg-cover bg-center filter contrast-125 brightness-[0.32] scale-105 transform animate-pulse duration-[8000ms]"
-          style={{ backgroundImage: `url('/images/salon-action.jpg')` }}
+          style={{ backgroundImage: `url(${salonActionImg})` }}
         />
         {/* Luxury gradient overlays for maximum contrast and brutalist atmosphere */}
         <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/70 to-dark-950/90" />
@@ -67,7 +68,7 @@ export function Hero({ t, onOpenBooking }) {
             <div className="w-full h-full rounded-full p-1.5 bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 shadow-[0_0_45px_rgba(197,160,89,0.5)] group-hover:scale-105 transition-transform duration-300">
               <div className="w-full h-full rounded-full overflow-hidden bg-black border-2 border-dark-950 flex items-center justify-center">
                 <img
-                  src="/images/logo-buffalos.png"
+                  src={logoImg}
                   alt="Buffalo's Barbershop"
                   className="w-full h-full object-cover object-center filter contrast-125 brightness-110"
                 />

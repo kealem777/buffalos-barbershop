@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import { Camera, Eye, X, ZoomIn } from 'lucide-react';
+import { salonInteriorImg, masterBarberCutImg, salonActionImg, academyImg } from '../assets/images';
 
 export function GallerySection({ lang }) {
   const [activePhoto, setActivePhoto] = useState(null);
 
   const photos = [
     {
-      src: '/images/salon-interior-main.jpg',
+      src: salonInteriorImg,
       title: lang === 'es' ? 'Sillones Retro & Ambiente VIP' : 'Retro Barber Chairs & VIP Atmosphere',
       desc: lang === 'es' ? 'Estaciones de trabajo equipadas con la más alta tecnología' : 'Equipped workstations with cutting-edge tools'
     },
     {
-      src: '/images/master-barber-cut.jpg',
+      src: masterBarberCutImg,
       title: lang === 'es' ? 'Precisión a Tijera y Navaja' : 'Scissor & Razor Millimeter Precision',
       desc: lang === 'es' ? 'Maestría y cuidado en cada detalle del corte' : 'Artisanal attention to every haircut'
     },
     {
-      src: '/images/salon-action.jpg',
+      src: salonActionImg,
       title: lang === 'es' ? 'Ritual Clásico en Acción' : 'Classic Barber Ritual in Action',
       desc: lang === 'es' ? 'Ambiente enérgico y profesional en CC Las Américas' : 'Dynamic gentleman club environment'
     },
     {
-      src: '/images/academy-graduates.jpg',
+      src: academyImg,
       title: lang === 'es' ? 'Graduación Buffalo\'s Academy' : 'Buffalo\'s Academy Graduation',
       desc: lang === 'es' ? 'Entrega de certificados oficiales a nuevos barberos' : 'Official diplomas awarded to certified barbers'
     }

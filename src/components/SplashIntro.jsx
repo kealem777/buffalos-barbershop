@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { logoImg } from '../assets/images';
 
 export function SplashIntro({ onFinish, brandName = "BUFFALO'S", since = "2018" }) {
   const [visible, setVisible] = useState(true);
@@ -46,7 +47,7 @@ export function SplashIntro({ onFinish, brandName = "BUFFALO'S", since = "2018" 
               <div className="w-[90%] h-[90%] rounded-full p-1.5 bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 shadow-[0_0_55px_rgba(197,160,89,0.45)]">
                 <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden border-2 border-dark-950">
                   <img
-                    src="/images/logo-buffalos.jpg"
+                    src={logoImg}
                     alt="Buffalo's Barbershop Logo"
                     className="w-full h-full object-cover object-center"
                   />
